@@ -13,6 +13,20 @@ Object.prototype.maxValue=function(){
      }
     }
  }
+ Object.prototype.minValue=function(){
+    const value=Object.values(this)
+    var temp=value.filter((val)=>typeof val!=='number')
+     if(temp.length>0){
+     throw 'only number is accept'
+     }
+  var max=Math.min(...value)
+  
+    for(let x in this){
+     if(this[x]==max){
+         return x
+     }
+    }
+ }
 
 
  
